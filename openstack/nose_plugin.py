@@ -58,6 +58,8 @@ class Openstack(plugins.Plugin):
 
     def _get_name(self, test):
         address = test.address()
+        if address is []:
+            return None, None
         if address[2] is None:
             return None, None
         parts = address[2].split(".")
